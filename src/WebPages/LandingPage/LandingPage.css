@@ -1,0 +1,171 @@
+.white {
+  background-color: white;
+}
+.display-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.radio,
+input[type="radio"] {
+  display: inline;
+}
+
+.icons {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.icon-badge {
+  background-color: var(--notification-color);
+}
+
+.horizontal-card-component {
+  display: flex;
+  justify-content: space-around;
+}
+
+.horizontal-card-content {
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+}
+
+.horizontal-card {
+  border: transparent;
+  box-shadow: var(--shadow-box);
+  border-radius: 1rem;
+}
+
+.heart-horizontal {
+  color: white;
+}
+
+.nav-container a {
+  color: var(--primary-color);
+}
+
+.home-hero-img-container {
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.home-hero-img {
+  width: 95%;
+  height: 400px;
+  object-fit: fill;
+}
+
+.card-skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-family: roboto;
+  color: var(--text-color);
+}
+
+.card-skeleton h1 {
+  padding-top: 1rem;
+}
+
+.primary-button {
+  cursor: pointer;
+}
+
+/* .horizontal-card-component :nth-child(1) {
+  height: 154.125px;
+} */
+/* ***************************Slide Show styling Starts ****************** */
+
+.slideshow-container {
+  height: 500px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.mySlides img {
+  height: 500px;
+
+  object-fit: cover;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: var(--primary-color);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: var(--primary-color);
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* **********************Slide Show Styling Ends******************** */
