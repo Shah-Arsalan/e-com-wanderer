@@ -1,0 +1,78 @@
+.white {
+  background-color: white;
+}
+.display-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.radio,
+input[type="radio"] {
+  display: inline;
+}
+
+.icons {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.icon-badge {
+  background-color: var(--notification-color);
+}
+
+.horizontal-card-component {
+  display: flex;
+  justify-content: space-around;
+}
+
+.horizontal-card-content {
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+}
+
+.horizontal-card {
+  border: transparent;
+  box-shadow: var(--shadow-box);
+  border-radius: 1rem;
+}
+
+.heart-horizontal {
+  color: white;
+}
+
+.nav-container a {
+  color: var(--primary-color);
+}
+
+.home-hero-img-container {
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.home-hero-img {
+  width: 95%;
+  height: 400px;
+  object-fit: fill;
+}
+
+.card-skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-family: roboto;
+  color: var(--text-color);
+}
+
+.card-skeleton h1 {
+  padding-top: 1rem;
+}
+
+.primary-button {
+  cursor: pointer;
+}
