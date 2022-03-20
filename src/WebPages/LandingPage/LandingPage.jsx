@@ -1,6 +1,8 @@
 import "./LandingPage.css";
+import { useNavigate } from "react-router";
 
 const LandingPage = () => {
+  let navigate = useNavigate();
   return (
     <>
       <div className="home-hero-img-container">
@@ -47,7 +49,12 @@ const LandingPage = () => {
       </div>
 
       <div className="shop-button display-flex margin-1rem">
-        <button className="primary-button shop-now">Explore Products</button>
+        <button
+          onClick={() => navigate("/productlist")}
+          className="primary-button shop-now"
+        >
+          Explore Products
+        </button>
       </div>
     </>
   );

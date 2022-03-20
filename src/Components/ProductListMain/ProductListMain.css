@@ -1,0 +1,17 @@
+@media screen and (max-width: 1200px) {
+  .product-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .product-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .product-container {
+    grid-template-columns: 1fr;
+  }
+}
