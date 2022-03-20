@@ -24,37 +24,37 @@ const LoginPage = () => {
   return (
     <>
       <div className="login-page">
-        <div class="login-container">
-          <div class="login-inputs">
+        <div className="login-container">
+          <div className="login-inputs">
             <h1>Login</h1>
-            <div class="input">
+            <div className="input">
               <label>Email</label>
               <input
                 value={loginDetails.email}
-                class="input-txt"
+                className="input-txt"
                 type="email"
               />
             </div>
-            <div class="input">
+            <div className="input">
               <label>Password</label>
               <input
                 value={loginDetails.password}
-                class="input-txt"
+                className="input-txt"
                 type="password"
               />
             </div>
 
-            <div class="input htmlFot-password">
-              <div class="list-item">
+            <div className="input htmlFot-password">
+              <div className="list-item">
                 <input id="item-1" type="checkbox" name="checkbox-input" />
                 <label htmlFor="item-1">Remember me</label>
                 <a href="">Forgot Password</a>
               </div>
             </div>
 
-            <div class="input btn-input">
+            <div className="input btn-input">
               <button
-                class="primary-button"
+                className="primary-button"
                 onClick={() =>
                   loginCall(loginDetails.email, loginDetails.password)
                 }
@@ -63,10 +63,8 @@ const LoginPage = () => {
               </button>
             </div>
 
-            <div class="input flex-justify-center">
-              <a href="/WebPages/signup/signup.html">
-                Dont have existing accout : Sign Up?
-              </a>
+            <div className="input flex-justify-center">
+              Dont have existing accout : Sign Up?
             </div>
           </div>
         </div>

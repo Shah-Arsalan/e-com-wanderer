@@ -9,9 +9,6 @@ import { LoginPage } from "./WebPages/loginPage/LoginPage";
 import { useAuth } from "./Contexts/auth-context";
 
 function App() {
-  const { token, user } = useAuth();
-  console.log("token is", token);
-  console.log("activeUser is ", user);
   return (
     <>
       <Nav />
