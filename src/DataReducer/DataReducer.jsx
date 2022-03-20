@@ -34,7 +34,6 @@ const DataReducer = (state, action) => {
     }
 
     case "SORT_BY_RATING": {
-      console.log(action.payload.ratingValue);
       return {
         ...state,
         filters: { ...state.filters, rating: action.payload.ratingValue },
@@ -42,7 +41,6 @@ const DataReducer = (state, action) => {
     }
 
     case "SORT_BY_PRICE": {
-      console.log(action.payload.sortValue);
       return {
         ...state,
         filters: { ...state.filters, sortBy: action.payload.sortValue },
@@ -50,7 +48,6 @@ const DataReducer = (state, action) => {
     }
 
     case "PRICE_RANGE": {
-      console.log(action.payload.priceValue);
       return {
         ...state,
         filters: { ...state.filters, priceRange: action.payload.priceValue },

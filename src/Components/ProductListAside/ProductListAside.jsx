@@ -38,7 +38,6 @@ const ProductListAside = () => {
           <div className="list-title">
             <p>Category</p>
           </div>
-          {console.log(state.filters.category)}
           <div className="checkbox-list-items">
             <div className="list-item">
               <input

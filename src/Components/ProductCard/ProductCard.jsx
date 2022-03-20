@@ -8,7 +8,7 @@ const ProductCard = ({
       <div className="vertical-card-component">
         <div className="card-skeleton">
           <div className="imageContainer position-relative">
-            <img className="image" src={img} alt="" />
+            <img className="image" src={img} alt="product-icon" />
 
             <i className="fas fa-heart heart-icon"></i>
           </div>

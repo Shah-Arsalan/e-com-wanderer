@@ -8,8 +8,6 @@ import { ProductListing } from "./WebPages/ProductListing/ProductListing";
 import { useData } from "./Contexts/DataContext";
 
 function App() {
-  const { state } = useData();
-  console.log("the state is ", state);
   return (
     <>
       <Nav />

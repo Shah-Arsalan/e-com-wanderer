@@ -34,7 +34,7 @@ const sortByCategory = (state, data) => {
     flag = true;
     newData = union(
       newData,
-      [...data].filter((ele) => ele.categoryName === "tent") // a,b,c
+      [...data].filter((ele) => ele.categoryName === "tent")
     );
   }
 
@@ -42,7 +42,7 @@ const sortByCategory = (state, data) => {
     flag = true;
     newData = union(
       newData,
-      [...data].filter((ele) => ele.categoryName === "sleepingBag") // a,b,c union with something
+      [...data].filter((ele) => ele.categoryName === "sleepingBag")
     );
   }
 

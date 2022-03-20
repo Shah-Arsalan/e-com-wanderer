@@ -19,7 +19,6 @@ const DataProvider = ({ children }) => {
             type: "INITIAL_DATA_FETCH",
             payload: { products: fetchedData.data.products },
           });
-        console.log("data", fetchedData.data.products);
       } catch (error) {
         console.log(error);
       } finally {
