@@ -5,7 +5,8 @@ import { Routes, Route } from "react-router-dom";
 import { Nav } from "./Components/Nav/Nav.jsx";
 import { LandingPage } from "./WebPages/LandingPage/LandingPage";
 import { ProductListing } from "./WebPages/ProductListing/ProductListing";
-import { useData } from "./Contexts/DataContext";
+import { LoginPage } from "./WebPages/loginPage/LoginPage";
+import { useAuth } from "./Contexts/auth-context";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/mockman" element={<Mockman />} />
         <Route path="/productlist" element={<ProductListing />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </>
   );
