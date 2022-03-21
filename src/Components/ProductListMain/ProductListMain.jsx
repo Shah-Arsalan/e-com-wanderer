@@ -9,7 +9,7 @@ const ProductListMain = () => {
   return (
     <>
       {filterredData.map((ele) => {
-        return <ProductCard key={ele._id} ele={ele} />;
+        return <ProductCard key={ele._id} product={ele} />;
       })}
     </>
   );

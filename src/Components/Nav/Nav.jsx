@@ -1,10 +1,12 @@
 import "./Nav.css";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../Contexts/auth-context";
+import { useData } from "../../Contexts/DataContext";
 
 const Nav = () => {
   let navigate = useNavigate();
   const { token } = useAuth();
+  const { state } = useData();
   return (
     <>
       <div className="nav-container white">
@@ -28,10 +30,12 @@ const Nav = () => {
             <p className="button-badge icon-badge">4</p>
           </div>
           <div className="relative-button-container">
-            <a href="/WebPages/wishlist/wishlist.html">
-              <i className="fas fa-heart"></i>
-            </a>
-            <p className="button-badge icon-badge">4</p>
+            <i
+              onClick={() => navigate("/wishlist")}
+              className="fas fa-heart"
+            ></i>
+
+            <p className="button-badge icon-badge">{state.wishlist.length}</p>
           </div>
         </div>
       </div>

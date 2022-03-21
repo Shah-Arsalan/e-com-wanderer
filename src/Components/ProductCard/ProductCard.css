@@ -48,3 +48,11 @@
 .vertical-card-component {
   height: 500px;
 }
+
+.card-skeleton .fav-icon {
+  color: black;
+}
+
+.card-skeleton .fas:hover {
+  color: red;
+}

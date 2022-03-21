@@ -10,17 +10,19 @@ const initialState = {
     priceRange: 12000,
   },
   productdata: [],
+  wishlist: [],
 };
 
 const DataReducer = (state, action) => {
-  console.log("action", action);
   const { payload } = action;
   switch (action.type) {
     case "INITIAL_DATA_FETCH": {
-      console.log("pay", action.payload);
       return {
         ...state,
-        productdata: state.productdata.concat(action.payload.products),
+        productdata: [...action.payload.products].map((ele) => ({
+          ...ele,
+          inWishList: false,
+        })),
       };
     }
 
@@ -67,6 +69,19 @@ const DataReducer = (state, action) => {
           rating: 0,
           priceRange: 12000,
         },
+      };
+    }
+
+    case "WISHLIST": {
+      return {
+        ...state,
+        wishlist: [...action.payload.wishlistItems],
+        productdata: state.productdata.map((ele) => ({
+          ...ele,
+          inWishList: action.payload.wishlistItems.some(
+            (item) => item._id === ele._id
+          ),
+        })),
       };
     }
 
