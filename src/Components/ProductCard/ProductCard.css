@@ -4,7 +4,7 @@
 .card-skeleton .fas {
   padding: 0.5rem;
   background-color: rgb(238, 242, 247);
-  color: red;
+  color: var(--red);
   box-shadow: var(--shadow-box);
   border-radius: 50%;
 }
@@ -50,9 +50,9 @@
 }
 
 .card-skeleton .fav-icon {
-  color: black;
+  color: var(--black);
 }
 
 .card-skeleton .fas:hover {
-  color: red;
+  color: var(--red);
 }

@@ -11,9 +11,6 @@ import { Wishlist } from "./WebPages/WishListPage/Wishlist";
 import { useData } from "./Contexts/DataContext";
 
 function App() {
-  const { state } = useData();
-  console.log("wishlist", state.wishlist);
-  console.log("productdata", state.productdata);
   return (
     <>
       <Nav />

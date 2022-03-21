@@ -1,6 +1,5 @@
 @import url(https://wanderer-store.netlify.app/main.css);
 @import url(https://wanderer-store.netlify.app//index.css);
-/* @import url(https:wanderer-store.netlify.app/WebPages/productListing/productlist.css); */
 
 body {
   font-family: roboto;
@@ -25,7 +24,6 @@ body {
 }
 
 .heart-icon {
-  /* color: red; */
   border-radius: 50%;
 }
 

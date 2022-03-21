@@ -7,7 +7,6 @@ const Wishlist = () => {
   const wishlistData = state.productdata.filter(
     (ele) => ele.inWishList === true
   );
-  console.log("wishlistdata", wishlistData);
   return (
     <>
       <div className="wislist-title flex-justify-center spacing-s">
