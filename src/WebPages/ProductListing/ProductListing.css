@@ -18,7 +18,6 @@ a {
 .card-skeleton .fas {
   padding: 0.5rem;
   background-color: rgb(238, 242, 247);
-  color: red;
   box-shadow: var(--shadow-box);
   border-radius: 50%;
 }
