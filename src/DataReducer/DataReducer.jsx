@@ -11,6 +11,7 @@ const initialState = {
   },
   productdata: [],
   wishlist: [],
+  cart: [],
 };
 
 const DataReducer = (state, action) => {
@@ -22,6 +23,8 @@ const DataReducer = (state, action) => {
         productdata: [...action.payload.products].map((ele) => ({
           ...ele,
           inWishList: false,
+          inCart: false,
+          qty: 0,
         })),
       };
     }
@@ -82,6 +85,23 @@ const DataReducer = (state, action) => {
             (item) => item._id === ele._id
           ),
         })),
+      };
+    }
+
+    case "CART": {
+      return {
+        ...state,
+        cart: [...action.payload.cartItems],
+        productdata: state.productdata.map((ele) => {
+          const presentInCart = action.payload.cartItems.find(
+            (item) => item._id === ele._id
+          );
+          return {
+            ...ele,
+            inCart: presentInCart ? true : false,
+            qty: presentInCart ? presentInCart.qty : 0,
+          };
+        }),
       };
     }
 

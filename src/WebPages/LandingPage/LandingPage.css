@@ -25,6 +25,7 @@ input[type="radio"] {
 .horizontal-card-component {
   display: flex;
   justify-content: space-around;
+  gap: 1rem;
 }
 
 .horizontal-card-content {
@@ -37,6 +38,11 @@ input[type="radio"] {
   border: transparent;
   box-shadow: var(--shadow-box);
   border-radius: 1rem;
+}
+
+.horizontal-card-landing-page {
+  flex-direction: column;
+  border: none;
 }
 
 .heart-horizontal {

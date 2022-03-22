@@ -24,10 +24,16 @@ const Nav = () => {
             </button>
           )}
           <div className="relative-button-container">
-            <a href="/WebPages/cart/cart.html">
-              <i className="fas fa-shopping-cart"></i>
-            </a>
-            <p className="button-badge icon-badge">4</p>
+            <i
+              onClick={() => navigate("/cart")}
+              className="fas fa-shopping-cart"
+            ></i>
+
+            {state.cart.length ? (
+              <p className="button-badge icon-badge">{state.cart.length}</p>
+            ) : (
+              ""
+            )}
           </div>
           <div className="relative-button-container">
             <i
@@ -35,7 +41,11 @@ const Nav = () => {
               className="fas fa-heart"
             ></i>
 
-            <p className="button-badge icon-badge">{state.wishlist.length}</p>
+            {state.wishlist.length ? (
+              <p className="button-badge icon-badge">{state.wishlist.length}</p>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>
