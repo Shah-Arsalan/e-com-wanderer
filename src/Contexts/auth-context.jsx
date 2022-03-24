@@ -58,8 +58,16 @@ const AuthProvider = ({ children }) => {
     }
   };
 
+  const logoutHandler = () => {
+    localStorage.removeItem("LoginCredentials");
+    setToken(null);
+    setUser(null);
+  };
+
   return (
-    <AuthContext.Provider value={{ loginCall, signupHandler, token, user }}>
+    <AuthContext.Provider
+      value={{ loginCall, signupHandler, logoutHandler, token, user }}
+    >
       {children}
     </AuthContext.Provider>
   );

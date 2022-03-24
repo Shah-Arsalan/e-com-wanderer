@@ -64,7 +64,7 @@ const Signup = () => {
                   value={signUpDetails.firstname}
                   placeholder="Jon"
                   className="input-txt"
-                  type="email"
+                  type="text"
                   onChange={(e) =>
                     setSignUpDetails({
                       ...signUpDetails,
@@ -81,7 +81,7 @@ const Signup = () => {
                   value={signUpDetails.lastname}
                   placeholder="Doe"
                   className="input-txt"
-                  type="email"
+                  type="text"
                   onChange={(e) =>
                     setSignUpDetails({
                       ...signUpDetails,
