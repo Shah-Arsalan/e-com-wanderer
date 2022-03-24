@@ -10,6 +10,7 @@ import { useAuth } from "./Contexts/auth-context";
 import { Wishlist } from "./WebPages/WishListPage/Wishlist";
 import { useData } from "./Contexts/DataContext";
 import { Cart } from "./WebPages/Cart/Cart";
+import { Signup } from "./WebPages/signup/Signup";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </>
   );

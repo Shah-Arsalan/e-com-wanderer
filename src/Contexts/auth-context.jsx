@@ -33,8 +33,33 @@ const AuthProvider = ({ children }) => {
     }
   };
 
+  const signupHandler = async (email, password, firstname, lastname) => {
+    try {
+      const response = await axios.post("/api/auth/signup", {
+        email,
+        password,
+        firstname,
+        lastname,
+      });
+
+      if (response.status === 200 || response.status === 201) {
+        localStorage.setItem(
+          "LoginCredentials",
+          JSON.stringify({
+            userToken: response.data.encodedToken,
+            activeUser: response.data.foundUser,
+          })
+        );
+        setToken(response.data.encodedToken);
+        setUser(response.data.foundUser);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
-    <AuthContext.Provider value={{ loginCall, token, user }}>
+    <AuthContext.Provider value={{ loginCall, signupHandler, token, user }}>
       {children}
     </AuthContext.Provider>
   );
