@@ -30,6 +30,7 @@ const Signup = () => {
           <div className="login-inputs">
             <h1>Sign Up</h1>
             <form
+              className="form"
               onSubmit={(e) => {
                 e.preventDefault();
                 signupHandler(

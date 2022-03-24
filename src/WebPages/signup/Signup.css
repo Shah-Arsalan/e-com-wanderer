@@ -18,7 +18,7 @@
 .login-inputs {
   background-color: var(--white);
   width: 25rem;
-  height: 40rem;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,4 +52,11 @@ input[type="password"] {
 
 input[type="email"] {
   border: 1px solid;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
