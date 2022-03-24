@@ -8,10 +8,15 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const { loginCall, token, user } = useAuth();
 
-  const [loginDetails, setLoginDetails] = useState({
-    email: "adarshbalika@gmail.com",
-    password: "adarshbalika",
-  });
+  const [loginDetails, setLoginDetails] = useState({ email: "", password: "" });
+
+  const guestLoginHandler = () => {
+    setLoginDetails({
+      email: "adarshbalika@gmail.com",
+      password: "adarshbalika",
+    });
+    loginCall("adarshbalika@gmail.com", "adarshbalika");
+  };
 
   useEffect(() => {
     if (token) {
@@ -19,7 +24,7 @@ const LoginPage = () => {
         navigate("/");
       }, 1000);
     }
-  }, [token]);
+  }, [token, loginDetails]);
 
   return (
     <>
@@ -33,6 +38,9 @@ const LoginPage = () => {
                 value={loginDetails.email}
                 className="input-txt"
                 type="email"
+                onChange={(e) =>
+                  setLoginDetails({ ...loginDetails, email: e.target.value })
+                }
               />
             </div>
             <div className="input">
@@ -41,6 +49,9 @@ const LoginPage = () => {
                 value={loginDetails.password}
                 className="input-txt"
                 type="password"
+                onChange={(e) =>
+                  setLoginDetails({ ...loginDetails, password: e.target.value })
+                }
               />
             </div>
 
@@ -63,7 +74,19 @@ const LoginPage = () => {
               </button>
             </div>
 
-            <div className="input flex-justify-center">
+            <div className="input btn-input">
+              <button
+                className="primary-button"
+                onClick={() => guestLoginHandler()}
+              >
+                Log In as guest
+              </button>
+            </div>
+
+            <div
+              onClick={() => navigate("/signup")}
+              className="input signup-input flex-justify-center"
+            >
               Dont have existing accout : Sign Up?
             </div>
           </div>

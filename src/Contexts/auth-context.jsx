@@ -11,10 +11,37 @@ const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorageItems?.userToken);
   const [user, setUser] = useState(localStorageItems?.activeUser);
   const loginCall = async (email, password) => {
+    console.log(email, password);
     try {
       const response = await axios.post("/api/auth/login", {
         email,
         password,
+      });
+
+      if (response.status === 200 || response.status === 201) {
+        console.log("success", email, password);
+        localStorage.setItem(
+          "LoginCredentials",
+          JSON.stringify({
+            userToken: response.data.encodedToken,
+            activeUser: response.data.foundUser,
+          })
+        );
+        setToken(response.data.encodedToken);
+        setUser(response.data.foundUser);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const signupHandler = async (email, password, firstname, lastname) => {
+    try {
+      const response = await axios.post("/api/auth/signup", {
+        email,
+        password,
+        firstname,
+        lastname,
       });
 
       if (response.status === 200 || response.status === 201) {
@@ -34,7 +61,7 @@ const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ loginCall, token, user }}>
+    <AuthContext.Provider value={{ loginCall, signupHandler, token, user }}>
       {children}
     </AuthContext.Provider>
   );
