@@ -10,6 +10,9 @@ const Cart = () => {
     (prev, curr) => prev + Number(curr.price) * Number(curr.qty),
     0
   );
+
+  const discountPrice = 500;
+  const deliveryPrice = 299;
   return (
     <>
       {CartData.length ? (
@@ -39,17 +42,17 @@ const Cart = () => {
                 </div>
                 <div class="price-components display-flex">
                   <p>Discount</p>
-                  <p>-500</p>
+                  <p>-{discountPrice}</p>
                 </div>
                 <div class="price-components display-flex">
                   <p>Delivery</p>
-                  <p>+299</p>
+                  <p>+{deliveryPrice}</p>
                 </div>
               </div>
 
               <div class="total-amount display-flex">
                 <h3>Toatal Amount</h3>
-                <p> {priceOfItems - 500 + 299}</p>
+                <p> {priceOfItems - discountPrice + deliveryPrice}</p>
               </div>
 
               <p>you will save 500 in this order</p>

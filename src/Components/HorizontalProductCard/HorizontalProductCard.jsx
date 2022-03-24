@@ -63,8 +63,6 @@ const HorizontalProductCard = ({ product }) => {
           type: "CART",
           payload: { cartItems: res.data.cart },
         });
-        console.log("success", qty);
-        console.log(type);
       }
     } catch (error) {
       console.log(error);

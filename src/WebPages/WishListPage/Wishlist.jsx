@@ -3,7 +3,6 @@ import { useData } from "../../Contexts/DataContext";
 import "./Wishlist.css";
 const Wishlist = () => {
   const { state } = useData();
-  console.log("inWishlist", state);
   const wishlistData = state.productdata.filter(
     (ele) => ele.inWishList === true
   );
