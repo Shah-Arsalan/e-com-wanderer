@@ -1,7 +1,7 @@
 import "./App.css";
 import logo from "./logo.png";
 import Mockman from "mockman-js";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { Nav } from "./Components/Nav/Nav.jsx";
 import { LandingPage } from "./WebPages/LandingPage/LandingPage";
 import { ProductListing } from "./WebPages/ProductListing/ProductListing";
@@ -13,6 +13,7 @@ import { Cart } from "./WebPages/Cart/Cart";
 import { Signup } from "./WebPages/signup/Signup";
 
 function App() {
+  const { token } = useAuth();
   return (
     <>
       <Nav />
@@ -21,8 +22,16 @@ function App() {
         <Route path="/mockman" element={<Mockman />} />
         <Route path="/productlist" element={<ProductListing />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route
+          path="/wishlist"
+          element={
+            token ? <Wishlist /> : <Navigate to="/login" replace={true} />
+          }
+        />
+        <Route
+          path="/cart"
+          element={token ? <Cart /> : <Navigate to="/login" replace={true} />}
+        />
         <Route path="/signup" element={<Signup />} />
       </Routes>
     </>

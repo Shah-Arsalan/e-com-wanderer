@@ -5,7 +5,7 @@ import { useData } from "../../Contexts/DataContext";
 
 const Nav = () => {
   let navigate = useNavigate();
-  const { token } = useAuth();
+  const { token, logoutHandler } = useAuth();
   const { state } = useData();
   return (
     <>
@@ -23,16 +23,25 @@ const Nav = () => {
               LogIn
             </button>
           )}
+          {token && (
+            <button
+              class="primary-button"
+              onClick={() => {
+                logoutHandler();
+                navigate("/");
+              }}
+            >
+              Log Out
+            </button>
+          )}
           <div className="relative-button-container">
             <i
               onClick={() => navigate("/cart")}
               className="fas fa-shopping-cart"
             ></i>
 
-            {state.cart.length ? (
+            {token && state.cart.length > 0 && (
               <p className="button-badge icon-badge">{state.cart.length}</p>
-            ) : (
-              ""
             )}
           </div>
           <div className="relative-button-container">
@@ -41,10 +50,8 @@ const Nav = () => {
               className="fas fa-heart"
             ></i>
 
-            {state.wishlist.length ? (
+            {token && state.wishlist.length > 0 && (
               <p className="button-badge icon-badge">{state.wishlist.length}</p>
-            ) : (
-              ""
             )}
           </div>
         </div>
