@@ -17,6 +17,7 @@ const ProductCard = ({ product }) => {
     img,
     rating,
     inWishList,
+    inCart,
   } = product;
 
   const wishListHandler = async () => {
@@ -62,6 +63,37 @@ const ProductCard = ({ product }) => {
     }
   };
 
+  const cartHandler = async () => {
+    try {
+      if (!token) {
+        navigate("/login");
+        return;
+      }
+
+      if (inCart) {
+        navigate("/Cart");
+      } else {
+        const res = await axios.post(
+          "/api/user/cart",
+          { product },
+          {
+            headers: {
+              authorization: token,
+            },
+          }
+        );
+        if (res.status === 200 || res.status === 201) {
+          dispatch({
+            type: "CART",
+            payload: { cartItems: res.data.cart },
+          });
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <div className="vertical-card-component">
@@ -85,7 +117,9 @@ const ProductCard = ({ product }) => {
           </div>
 
           <div className="footer-button">
-            <button className="card-button">Add to cart</button>
+            <button className="card-button" onClick={() => cartHandler()}>
+              {inCart ? "Go to Cart" : "Add to Cart"}
+            </button>
           </div>
         </div>
       </div>

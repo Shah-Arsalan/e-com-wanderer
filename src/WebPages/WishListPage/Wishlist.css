@@ -1,6 +1,3 @@
-@import url(https://wanderer-store.netlify.app/main.css);
-@import url(https://wanderer-store.netlify.app//index.css);
-
 body {
   font-family: roboto;
   color: var(--text-color);

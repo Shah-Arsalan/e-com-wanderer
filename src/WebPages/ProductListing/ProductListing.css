@@ -1,6 +1,3 @@
-@import url(https://wanderer-store.netlify.app/main.css);
-@import url(https://wanderer-store.netlify.app//index.css);
-
 .nav-container {
   box-shadow: var(--shadow-box);
 }
