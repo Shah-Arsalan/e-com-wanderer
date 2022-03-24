@@ -24,7 +24,7 @@ const LoginPage = () => {
         navigate("/");
       }, 1000);
     }
-  }, [token, loginDetails]);
+  }, [token]);
 
   return (
     <>
@@ -33,8 +33,9 @@ const LoginPage = () => {
           <div className="login-inputs">
             <h1>Login</h1>
             <div className="input">
-              <label>Email</label>
+              <label htmlFor="login-email">Email</label>
               <input
+                id="login-email"
                 value={loginDetails.email}
                 className="input-txt"
                 type="email"
@@ -44,8 +45,9 @@ const LoginPage = () => {
               />
             </div>
             <div className="input">
-              <label>Password</label>
+              <label htmlFor="login-password">Password</label>
               <input
+                id="login-password"
                 value={loginDetails.password}
                 className="input-txt"
                 type="password"

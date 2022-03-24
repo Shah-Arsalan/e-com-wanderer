@@ -30,8 +30,9 @@ const Signup = () => {
           <div className="login-inputs">
             <h1>Sign Up</h1>
             <div className="input">
-              <label>Email</label>
+              <label htmlFor="signup-email">Email</label>
               <input
+                id="signup-email"
                 value={signUpDetails.email}
                 placeholder="user@gmail.com"
                 className="input-txt"
@@ -42,8 +43,9 @@ const Signup = () => {
               />
             </div>
             <div className="input">
-              <label>First name</label>
+              <label htmlFor="signup-first">First name</label>
               <input
+                id="signup-first"
                 value={signUpDetails.firstname}
                 placeholder="Jon"
                 className="input-txt"
@@ -58,8 +60,9 @@ const Signup = () => {
             </div>
 
             <div className="input">
-              <label>Last Name</label>
+              <label htmlFor="signup-last">Last Name</label>
               <input
+                id="signup-last"
                 value={signUpDetails.lastname}
                 placeholder="Doe"
                 className="input-txt"
@@ -73,8 +76,9 @@ const Signup = () => {
               />
             </div>
             <div className="input">
-              <label>Password</label>
+              <label htmlFor="signup-password">Password</label>
               <input
+                id="signup-password"
                 value={signUpDetails.password}
                 placeholder="********"
                 className="input-txt"
@@ -88,8 +92,9 @@ const Signup = () => {
               />
             </div>
             <div className="input">
-              <label>Confirm Password</label>
+              <label htmlFor="conf-password">Confirm Password</label>
               <input
+                id="conf-password"
                 value={signUpDetails.confirmpassword}
                 placeholder="********"
                 className="input-txt"

@@ -11,7 +11,6 @@ const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorageItems?.userToken);
   const [user, setUser] = useState(localStorageItems?.activeUser);
   const loginCall = async (email, password) => {
-    console.log(email, password);
     try {
       const response = await axios.post("/api/auth/login", {
         email,
@@ -19,7 +18,6 @@ const AuthProvider = ({ children }) => {
       });
 
       if (response.status === 200 || response.status === 201) {
-        console.log("success", email, password);
         localStorage.setItem(
           "LoginCredentials",
           JSON.stringify({
