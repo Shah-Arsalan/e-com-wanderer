@@ -25,8 +25,8 @@ const AuthProvider = ({ children }) => {
             activeUser: response.data.foundUser,
           })
         );
-        setToken(response.data.encodedToken);
         setUser(response.data.foundUser);
+        setToken(response.data.encodedToken);
       }
     } catch (error) {
       console.log(error);
@@ -50,8 +50,10 @@ const AuthProvider = ({ children }) => {
             activeUser: response.data.foundUser,
           })
         );
+
+        setUser(response.data.createdUser);
+
         setToken(response.data.encodedToken);
-        setUser(response.data.foundUser);
       }
     } catch (error) {
       console.log(error);

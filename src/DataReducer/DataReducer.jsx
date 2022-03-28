@@ -18,15 +18,40 @@ const DataReducer = (state, action) => {
   const { payload } = action;
   switch (action.type) {
     case "INITIAL_DATA_FETCH": {
-      return {
-        ...state,
-        productdata: [...action.payload.products].map((ele) => ({
-          ...ele,
-          inWishList: false,
-          inCart: false,
-          qty: 0,
-        })),
-      };
+      if (payload.products) {
+        return {
+          ...state,
+          productdata: [...action.payload.products].map((ele) => ({
+            ...ele,
+            inWishList: false,
+            inCart: false,
+            qty: 0,
+          })),
+        };
+      }
+      if (payload.wishlist) {
+        return {
+          ...state,
+          productdata: [...state.productdata].map((ele) => ({
+            ...ele,
+            inWishList: payload.wishlist.some((item) => item._id === ele._id),
+          })),
+          wishlist: [...payload.wishlist],
+        };
+      }
+      if (payload.cart) {
+        return {
+          ...state,
+          cart: [...payload.cart],
+          productdata: [...state.productdata].map((ele) => ({
+            ...ele,
+            inCart: payload.cart.some((item) => item._id === ele._id),
+            qty: payload.cart.some((item) => item._id === ele._id)
+              ? payload.cart.find((item) => item._id === ele._id).qty
+              : 0,
+          })),
+        };
+      }
     }
 
     case "CATEGORY": {

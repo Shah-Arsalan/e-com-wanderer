@@ -3,11 +3,12 @@ import { useState } from "react";
 import { useAuth } from "../../Contexts/auth-context";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useData } from "../../Contexts/DataContext";
 
 const LoginPage = () => {
   const navigate = useNavigate();
   const { loginCall, token, user } = useAuth();
-
+  const { dispatch } = useData();
   const [loginDetails, setLoginDetails] = useState({ email: "", password: "" });
 
   const guestLoginHandler = () => {
