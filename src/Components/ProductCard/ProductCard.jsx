@@ -111,7 +111,7 @@ const ProductCard = ({ product }) => {
 
           <div className="content">
             <h3 className="card-content">{title}</h3>
-            <h5>{price}</h5>
+            <h5>₹ {price}</h5>
             <p>{discription}</p>
             <p>Rated {rating} ⭐</p>
           </div>

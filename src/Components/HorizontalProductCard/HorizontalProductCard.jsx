@@ -79,7 +79,7 @@ const HorizontalProductCard = ({ product }) => {
 
           <div className="horizontal-card-content">
             <h3>{title}</h3>
-            <h4>{price}</h4>
+            <h4>₹ {price}</h4>
             <p>50% off</p>
             <div className="quantity">
               <p>quantity:</p>
