@@ -1,5 +1,5 @@
 import "./Nav.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../Contexts/auth-context";
 import { useData } from "../../Contexts/DataContext";
 
@@ -7,6 +7,11 @@ const Nav = () => {
   let navigate = useNavigate();
   const { token, logoutHandler } = useAuth();
   const { state } = useData();
+  const location = useLocation();
+  if (location.pathname === "/404") {
+    return null;
+  }
+
   return (
     <>
       <div className="nav-container white">

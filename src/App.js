@@ -11,6 +11,7 @@ import { Wishlist } from "./WebPages/WishListPage/Wishlist";
 import { useData } from "./Contexts/DataContext";
 import { Cart } from "./WebPages/Cart/Cart";
 import { Signup } from "./WebPages/signup/Signup";
+import { Error } from "./WebPages/Error/Error";
 
 function App() {
   const { token } = useAuth();
@@ -33,6 +34,9 @@ function App() {
           element={token ? <Cart /> : <Navigate to="/login" replace={true} />}
         />
         <Route path="/signup" element={<Signup />} />
+        <Route path="*" element={<Navigate to="/404" />} />
+
+        <Route path="/404" element={<Error />} />
       </Routes>
     </>
   );
