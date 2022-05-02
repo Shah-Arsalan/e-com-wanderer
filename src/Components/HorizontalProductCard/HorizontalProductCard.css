@@ -1,0 +1,83 @@
+@import url(https://wanderer-store.netlify.app/main.css);
+@import url(https://wanderer-store.netlify.app//index.css);
+
+.horizontal-card {
+  display: flex;
+  flex-direction: row;
+}
+.horizontal-image-container-cart {
+  object-fit: fill;
+  width: 30rem;
+}
+
+.button-cart {
+  margin-top: 1rem;
+  color: white;
+}
+
+.price-card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  min-width: 300px;
+  height: 300px;
+  justify-content: space-between;
+  padding: 1rem;
+  box-shadow: var(--shadow-box);
+  font-family: "Open Sans", sans-serif;
+  color: var(--text-color);
+}
+
+.price-calculation {
+  gap: 1rem;
+}
+
+.price-components {
+  justify-content: space-between;
+  padding: 0.2rem 0;
+}
+
+.total-amount {
+  justify-content: space-between;
+}
+
+.divider {
+  color: var(--text-color);
+}
+
+.image-horizontal {
+  border-radius: 1rem;
+}
+
+.horizontal-card-content {
+  color: var(--text-color);
+}
+
+.quantity button {
+  background-color: var(--white);
+  border: 1px solid var(--text-color);
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.horizontal-card-buttons {
+  color: var(--text-color);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 70%;
+}
+
+.button-cart:nth-last-of-type(1) {
+  background-color: white;
+  border: 1px solid var(--primary-color);
+}
+
+.button-cart:nth-last-of-type(1):hover {
+  background-color: var(--notification-color);
+  border: 1px solid transparent;
+  color: var(--white);
+}
+
+.button-cart:nth-last-of-type(2):hover {
+  background-color: #9fbb2d;
+  color: var(--white);
+}

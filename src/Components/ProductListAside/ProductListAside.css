@@ -1,0 +1,63 @@
+@import url(https://wanderer-store.netlify.app/main.css);
+@import url(https://wanderer-store.netlify.app//index.css);
+
+.nav-container {
+  box-shadow: var(--shadow-box);
+}
+
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  color: var(--primary-color);
+}
+
+.filter-and-category {
+  display: flex;
+  flex-direction: column;
+  grid-area: scroller;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  align-self: start;
+  margin-top: 1.5rem;
+  color: var(--primary-color);
+  box-shadow: none;
+  color: var(--text-color);
+  min-width: 250px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.price-range {
+  justify-content: flex-start;
+  gap: 2.5rem;
+}
+
+.scroll-input {
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.product-listing-body {
+  display: flex;
+}
+
+.product-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.radio-list {
+  align-self: flex-start;
+}
+
+.list-title {
+  align-self: flex-start;
+}

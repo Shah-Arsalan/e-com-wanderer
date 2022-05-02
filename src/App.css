@@ -1,3 +1,6 @@
+@import url(https://wanderer-store.netlify.app/main.css);
+@import url(https://wanderer-store.netlify.app//index.css);
+
 .App {
   text-align: center;
 }
@@ -5,6 +8,11 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+:root {
+  --red: #ff0000;
+  --black: #000000;
 }
 
 @media (prefers-reduced-motion: no-preference) {
