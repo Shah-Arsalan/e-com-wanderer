@@ -14,7 +14,7 @@ const LandingPage = () => {
       </div>
 
       <div className="horizontal-card-component spacing-m">
-        <div className="card-skeleton  border-black horizontal-card-landing-page">
+        <div onClick={() => navigate("/tents")} className="card-skeleton pointer  border-black horizontal-card-landing-page">
           <h1>Tents</h1>
           <div className="horizontal-image-container position-relative">
             <img
@@ -25,7 +25,7 @@ const LandingPage = () => {
           </div>
         </div>
 
-        <div className="card-skeleton  border-black horizontal-card-landing-page">
+        <div  onClick={() => navigate("/sleepingbags")} className="card-skeleton pointer  border-black horizontal-card-landing-page">
           <h1>Sleeping Bags</h1>
           <div className="horizontal-image-container position-relative">
             <img
@@ -36,7 +36,7 @@ const LandingPage = () => {
           </div>
         </div>
 
-        <div className="card-skeleton  border-black horizontal-card-landing-page">
+        <div onClick={() => navigate("/shoes")} className="card-skeleton pointer  border-black horizontal-card-landing-page">
           <h1>Shoes</h1>
           <div className="horizontal-image-container position-relative">
             <img

@@ -14,6 +14,8 @@ const Signup = () => {
     lastname: "",
     confirmpassword: "",
   });
+  const[appear , setAppear] = useState(false);
+  const[passwordType , setPasswordType] = useState("password")
 
   useEffect(() => {
     if (token) {
@@ -32,13 +34,28 @@ const Signup = () => {
             <form
               className="form"
               onSubmit={(e) => {
+                
                 e.preventDefault();
-                signupHandler(
+                if(signUpDetails.password !== signUpDetails.confirmpassword  ){
+                  setAppear(prev => !prev)
+                }
+                else if(signUpDetails.email == ""){
+                  setAppear(prev => !prev)
+                }
+                else if(signUpDetails.firstname == ""){
+                  setAppear(prev => !prev)
+                }
+                else if(signUpDetails.lastname == ""){
+                  setAppear(prev => !prev)
+                }
+                else{
+                  signupHandler(
                   signUpDetails.email,
                   signUpDetails.password,
                   signUpDetails.firstname,
                   signUpDetails.lastname
                 );
+                }
               }}
             >
               <div className="input">
@@ -93,13 +110,14 @@ const Signup = () => {
               </div>
               <div className="input">
                 <label htmlFor="signup-password">Password</label>
+                <div className="input-icon">
                 <input
                   required={true}
                   id="signup-password"
                   value={signUpDetails.password}
                   placeholder="********"
                   className="input-txt"
-                  type="password"
+                  type={passwordType}
                   onChange={(e) =>
                     setSignUpDetails({
                       ...signUpDetails,
@@ -107,6 +125,14 @@ const Signup = () => {
                     })
                   }
                 />
+                <i onClick={() => {
+                  if(passwordType == "password"){
+                    setPasswordType("text")
+                  }else{
+                    setPasswordType("password")
+                  }
+                }} className="fas fa-eye"></i>
+                </div>
               </div>
               <div className="input">
                 <label htmlFor="conf-password">Confirm Password</label>
@@ -139,11 +165,18 @@ const Signup = () => {
               </div>
 
               <div className="input flex-justify-center">
-                <a href="/WebPages/login/login.html">Already a user? Login</a>
+                <p className="loginLink" onClick={() => navigate("/login")}>Already a user? Login</p>
               </div>
             </form>
           </div>
         </div>
+        {appear &&<div className="error-msg">
+        
+        <p>Ensure all fields are filled and both passwords are same!</p>
+        <p className="cross" onClick={() => {
+          setAppear(prev => !prev)
+        }}>❌</p>
+        </div>}
       </div>
     </>
   );
