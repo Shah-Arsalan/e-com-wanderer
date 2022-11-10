@@ -41,11 +41,11 @@ const DataProvider = ({ children }) => {
     if (token) {
       dispatch({
         type: "INITIAL_DATA_FETCH",
-        payload: { wishlist: user.wishlist },
+        payload: { wishlist: user?.wishlist },
       });
       dispatch({
         type: "INITIAL_DATA_FETCH",
-        payload: { cart: user.cart },
+        payload: { cart: user?.cart },
       });
     }
   }, [token]);

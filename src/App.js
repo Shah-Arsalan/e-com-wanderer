@@ -12,6 +12,9 @@ import { useData } from "./Contexts/DataContext";
 import { Cart } from "./WebPages/Cart/Cart";
 import { Signup } from "./WebPages/signup/Signup";
 import { Error } from "./WebPages/Error/Error";
+import { Tent } from "./WebPages/Tent/tent";
+import { SleepingBag } from "./WebPages/Sleeping Bag/sleepingbag";
+import { Shoes } from "./WebPages/Shoes/shoes";
 
 function App() {
   const { token } = useAuth();
@@ -23,6 +26,9 @@ function App() {
         <Route path="/mockman" element={<Mockman />} />
         <Route path="/productlist" element={<ProductListing />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/tents" element={<Tent/>} />
+        <Route path="/sleepingbags" element={<SleepingBag/>} />
+        <Route path="/shoes" element={<Shoes/>} />
         <Route
           path="/wishlist"
           element={

@@ -8,7 +8,7 @@ const ProductListAside = () => {
       <div className="filter-and-category megaContainer">
         <div className="topContainer flex-space-between">
           <h3>Filters</h3>
-          <p onClick={() => dispatch({ type: "CLEAR" })}>Clear</p>
+          <p className="clearBtn" onClick={() => dispatch({ type: "CLEAR" })}>Clear</p>
         </div>
 
         <div className="input scroll-input display-flex">

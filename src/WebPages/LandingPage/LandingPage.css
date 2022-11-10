@@ -82,3 +82,13 @@ input[type="radio"] {
 .primary-button {
   cursor: pointer;
 }
+
+.pointer{
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+
+.pointer:hover{
+  color: var(--primary-color);
+}
